@@ -4,9 +4,9 @@
 #include <cmath>
 using namespace std;
 
-
 int main(int argc , char* args[])
 {
+    // 初始化一个整数向量a，包含1到9的数字
     vector<int> a={1,2,3,4,5,6,7,8,9};
     vector<int>output;
     vector<vector<int>> matrix;
@@ -16,7 +16,7 @@ int main(int argc , char* args[])
     vector<int> c={0,0,0};
     vector<int> tmp;
     
-      
+    // 遍历向量a中的每个元素，计算所有可能的三个数字的组合及其和
     for(int i=0;i<a.size();i++)
     {
         int x=a[i]*100;
@@ -35,6 +35,8 @@ int main(int argc , char* args[])
             }
         }
     }
+    
+    // 在output中查找满足2倍和3倍关系的三个数，并将它们存入matrix
     for(int i=0;i<output.size();i++)
     {
         int t0=output[i];
@@ -55,26 +57,22 @@ int main(int argc , char* args[])
             }
         }
     }
-    // for(int l=0;l<output.size();l++)
-    // {
-    //     cout<<output[l]<<endl;
-    // }
-    cout << "matrix" << endl;
     
+    // 输出matrix中的所有组合
+    cout << "matrix" << endl;
     for(const auto &row:matrix) 
     {
         for (int num : row) 
         {
             cout << num << ' ';
         }
+        cout << endl;
         cout << endl; // 换行
     }
-
-
-
+    
+    // 从matrix中筛选出不包含重复数字的组合，存入output0
     for(int i=0;i<matrix.size();i++)
     {
-        
         const vector<int> &tmp=matrix[i];
         a0[0]=floor(tmp[0]/100);
         a0[1]=floor((tmp[0]%100)/10);
@@ -85,12 +83,9 @@ int main(int argc , char* args[])
         c[0]=floor(tmp[2]/100);
         c[1]=floor((tmp[2]%100)/10);
         c[2]=tmp[2]%10;
-        
-        
         if(a0[0]==b[0]||a0[0]==b[1]||a0[0]==b[2]||a0[1]==b[0]||a0[1]==b[1]||a0[1]==b[2]\
         ||a0[2]==b[0]||a0[2]==b[1]||a0[2]==b[2]||a0[0]==c[0]||a0[0]==c[1]||a0[0]==c[2]||a0[1]==c[0]||a0[1]==c[1]\
-        ||a0[1]==c[2]||a0[2]==c[0]||a0[2]==c[1]||a0[2]==c[2]\
-        ||b[0]==c[0]||b[0]==c[1]||b[0]==c[2]||b[1]==c[0]||b[1]==c[1]||b[1]==c[2]||b[2]==c[0]||b[2]==c[1]||b[2]==c[2])\
+        ||a0[1]==c[2]||a0[2]==c[0]||a0[2]==c[1]||a0[2]==c[2]||b[0]==c[0]||b[0]==c[1]||b[0]==c[2]||b[1]==c[0]||b[1]==c[1]||b[1]==c[2]||b[2]==c[0]||b[2]==c[1]||b[2]==c[2])\
         continue;
         else
         {  
@@ -98,10 +93,10 @@ int main(int argc , char* args[])
         }
         
     }
+    
+    // 输出output0中的所有组合
     cout<<"output0"<<endl;
     for (const auto &row : output0) 
-    // 遍历矩阵的每一行
-    // 对于mtrix中的每一个元素（在这里是每一个vector<int>，我们将其称为row），执行循环体内的代码块。
     { // 更简洁的遍历方式
         for (int n : row) 
         {
@@ -109,12 +104,6 @@ int main(int argc , char* args[])
         }
         cout << endl; // 换行，结束当前行的输出
     }
-    
-
-
-
-
-
     system("pause");
     return 0;
 }
