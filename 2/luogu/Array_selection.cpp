@@ -66,7 +66,6 @@ int main(int argc , char* args[])
         {
             cout << num << ' ';
         }
-        cout << endl;
         cout << endl; // 换行
     }
     
