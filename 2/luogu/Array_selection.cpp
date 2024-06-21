@@ -4,6 +4,7 @@
 #include <cmath>
 using namespace std;
 
+//BBX is beautiful
 int main(int argc , char* args[])
 {
     // 初始化一个整数向量a，包含1到9的数字
