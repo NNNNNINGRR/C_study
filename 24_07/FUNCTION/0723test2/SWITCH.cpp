@@ -14,7 +14,7 @@ int main(int aegc, char* args[])
         case 'C':
             cout<<"及格"<<endl;
             break;
-        case 'D':
+        case 'E':
             cout<<"再接再厉"<<endl;
             break;
 
